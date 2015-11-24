@@ -1,5 +1,6 @@
 body, div, h1, h2, h3, h4, h5, h5, p, ul, ol, li, dl, dt, dd { margin: 0; padding: 0;}
 ul, ol, dl { list-style-type: none;}
+h1, h2, p { color:#fff; position: relative; }
 
 body { font:"Microsoft Yahei",Arial,Helvetica,sans-serif;font-size:14px; color: #515151;}
 li a { color: #a9a9a9; text-decoration: none; font:18px normal;}
@@ -9,9 +10,8 @@ li a:hover { color: #e31d1a; font:18px bold;}
 .clearfix:after{ clear: both; }
 
 .center-wrap { position: relative; width: 1040px; height:100%; margin: 0 auto; }
-.desc { position: relative;}
 
-.section{overflow: hidden;}
+.section{position: relative;overflow: hidden;}
 .section h1 { margin-bottom: 20px; line-height: 1.4; font-size: 40px; font-weight: 400;}
 .section p { line-height: 25px;}
 
@@ -119,23 +119,29 @@ li a:hover { color: #e31d1a; font:18px bold;}
 
 .home {
   background:  url(../images/home.jpg) 50% no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 .home-desc{
   position: absolute;
-  width: 400px;
-  bottom:100px;
-  color:#fff;
+  width:400px;
+  top:360px;
 }
-
+.home-desc h1{
+  left:300px;
+  font-size:20px;
+}
+.home-desc p{
+  margin-top:300px;
+}
 
 .shoes{
   background:  url(../images/shoes.jpg) 50% no-repeat;
 }
 .shoes-desc{
-  position: absolute;
   width: 400px;
   padding-top:62px;
-  color:#fff;
+  opacity: 0;
 }
 
 
@@ -143,10 +149,17 @@ li a:hover { color: #e31d1a; font:18px bold;}
   background:  url(../images/yard.jpg) 50% no-repeat;
 }
 .yard-desc{
-  top:50%;
-  color:#fff;
+  position: absolute;
+  top:250px;
 }
-
+.yard-desc h1{
+  opacity: 0;
+}
+.yard-desc p{
+  opacity: 0;
+  font-size:8px;
+  left:60px;
+}
 
 .stop{
   background: url(../images/stop.jpg) 50% no-repeat;
@@ -154,47 +167,65 @@ li a:hover { color: #e31d1a; font:18px bold;}
 .stop-desc{
   position: absolute;
   width: 400px;
-  bottom: 80px;
+  bottom: 50px;
   right:0px;
   color:#000;
   text-align:right;
   font-weight:bold;
+  opacity: 0;
+}
+.stop-desc h1,.stop-desc p{
+  color:#000;
 }
 
 
 .street{
   background: url(../images/street.jpg) no-repeat;
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 .street-desc{
   margin:0 auto;
-  color:#fff;
   text-align: center;
-  padding-top: 62px;
+  padding-top: 0px;
+}
+.street-desc h1{
+  font-size:20px;
+}
+.street p{
+  margin-top: 300px;
+  opacity: 0;
 }
 
 .office{
   background: url(../images/office.jpg) 50% no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 .office-desc{
   position: absolute;
+  top:200px;
   width: 400px;
-  bottom:50px;
-  color:#000;
+  left:400px;
   font-weight: bold;
 }
-.office-desc h2{
-  width: 289px; height: 42px; font-size: 0; background-image: url(../images/logo2.png); margin-left: 20px;
+.office-desc h1,.office-desc p{
+  color:#000;
 }
-.office-desc h3{
-  width: 289px; height: 42px; font-size: 0; background-image: url(../images/logo3.png); margin-left:100px;
+.office-logo{
+  position: absolute;
+  top:450px;
+}
+.logo2{
+  width: 289px; height: 42px; font-size: 0; background-image: url(../images/logo2.png); margin-left: 40px; opacity: 0;
+}
+.logo3{
+  width: 289px; height: 42px; font-size: 0; background-image: url(../images/logo3.png); margin-left:120px; opacity: 0;
 }
 
 
 .footer-link{
   padding: 30px 0;
-  border-top: 10px solid #eee;
   border-bottom: 10px solid #eee;
   overflow: hidden;
 }
@@ -220,3 +251,10 @@ li a:hover { color: #e31d1a; font:18px bold;}
   padding: 20px 0;
   text-align: center;
 }
+.copyright p{
+  color:#515151;
+}
+
+
+#fp-nav ul li a span {background-color:#fff;}
+#fp-nav ul li:last-child { display: none;}
